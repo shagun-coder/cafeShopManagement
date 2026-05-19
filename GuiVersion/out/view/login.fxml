@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="600.0" prefWidth="900.0"
+            xmlns="http://javafx.com/javafx/17"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="controller.LoginController">
+
+    <children>
+
+        <HBox prefHeight="600.0" prefWidth="900.0">
+
+            <!-- LEFT SIDE -->
+            <AnchorPane prefHeight="600.0" prefWidth="450.0"
+                        style="-fx-background-color: linear-gradient(to bottom right,#833ab4,#fd1d1d,#fcb045);">
+
+                <children>
+
+                    <Label layoutX="120" layoutY="220"
+                           text="Cafe Shop"
+                           textFill="WHITE">
+
+                        <font>
+                            <Font size="40"/>
+                        </font>
+
+                    </Label>
+
+                    <Label layoutX="110" layoutY="280"
+                           text="Modern Cafe Management System"
+                           textFill="WHITE">
+
+                        <font>
+                            <Font size="18"/>
+                        </font>
+
+                    </Label>
+
+                </children>
+
+            </AnchorPane>
+
+            <!-- RIGHT SIDE -->
+            <VBox alignment="CENTER"
+                  prefHeight="600.0"
+                  prefWidth="450.0"
+                  spacing="20"
+                  style="-fx-background-color:#121212;">
+
+                <padding>
+                    <Insets top="40" right="40" bottom="40" left="40"/>
+                </padding>
+
+                <Label text="Login"
+                       textFill="WHITE">
+
+                    <font>
+                        <Font size="35"/>
+                    </font>
+
+                </Label>
+
+                <TextField fx:id="usernameField"
+                           promptText="Username"
+                           prefHeight="45"
+                           style="-fx-background-radius:12;
+                                  -fx-background-color:#1f1f1f;
+                                  -fx-text-fill:white;
+                                  -fx-prompt-text-fill:gray;
+                                  -fx-font-size:15;" />
+
+                <PasswordField fx:id="passwordField"
+                               promptText="Password"
+                               prefHeight="45"
+                               style="-fx-background-radius:12;
+                                      -fx-background-color:#1f1f1f;
+                                      -fx-text-fill:white;
+                                      -fx-prompt-text-fill:gray;
+                                      -fx-font-size:15;" />
+
+                <Button text="Login"
+                        onAction="#login"
+                        prefHeight="45"
+                        prefWidth="300"
+                        style="-fx-background-color:#E1306C;
+                               -fx-background-radius:12;
+                               -fx-text-fill:white;
+                               -fx-font-size:16;
+                               -fx-font-weight:bold;" />
+
+                <Hyperlink text="Create Account"
+                           onAction="#openSignup"
+                           style="-fx-text-fill:#bbbbbb;
+                                  -fx-font-size:14;" />
+
+            </VBox>
+
+        </HBox>
+
+    </children>
+
+</AnchorPane>

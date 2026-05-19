@@ -1,0 +1,18 @@
+<VBox alignment="CENTER"
+      spacing="15"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="controller.SignupController">
+
+    <Label text="CREATE ACCOUNT"
+           style="-fx-font-size: 24px;"/>
+
+    <TextField fx:id="usernameField"
+               promptText="Username"/>
+
+    <PasswordField fx:id="passwordField"
+                   promptText="Password"/>
+
+    <Button text="SIGNUP"
+            onAction="#signup"/>
+
+</VBox>

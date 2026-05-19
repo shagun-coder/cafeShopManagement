@@ -1,0 +1,15 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Run JavaFX",
+            "request": "launch",
+            "mainClass": "application.Main",
+           "vmArgs": "--module-path \"C:/Users/M S I/Downloads/openjfx-26.0.1_windows-x64_bin-sdk/javafx-sdk-26.0.1/lib\" --add-modules javafx.controls,javafx.fxml",
+            "classPaths": [
+                "lib/mysql-connector-j-9.3.0.jar"
+            ]
+        }
+    ]
+}

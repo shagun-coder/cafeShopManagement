@@ -42,7 +42,7 @@ public class CafeShopManagement {
 
     static Scanner sc = new Scanner(System.in);
 
-    // ADD PRODUCT
+    
     static void addProduct() {
 
         System.out.println("\n--- ADD PRODUCT ---");
@@ -72,7 +72,6 @@ public class CafeShopManagement {
         System.out.println("Product Added Successfully!");
     }
 
-    // VIEW PRODUCTS
     static void viewProducts() {
 
         System.out.println("\n--- PRODUCT LIST ---");

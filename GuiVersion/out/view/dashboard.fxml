@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="controller.DashboardController"
+            prefHeight="700"
+            prefWidth="1100">
+
+    <!-- LEFT SIDEBAR -->
+
+    <left>
+
+        <VBox spacing="25"
+              alignment="TOP_CENTER"
+              prefWidth="220"
+              style="-fx-background-color: #2D1B14;
+                     -fx-padding: 30;">
+
+            <Label text="☕ CAFE SHOP"
+                   style="-fx-text-fill: white;
+                          -fx-font-size: 24px;
+                          -fx-font-weight: bold;"/>
+
+            <Button text="Dashboard"
+                    prefWidth="180"
+                    style="-fx-background-color: #C67C4E;
+                           -fx-text-fill: white;
+                           -fx-font-size: 15px;"/>
+
+            <Button text="Products"
+                    prefWidth="180"
+                    style="-fx-background-color: #3E2723;
+                           -fx-text-fill: white;
+                           -fx-font-size: 15px;"/>
+
+            <Button text="Orders"
+                    prefWidth="180"
+                    style="-fx-background-color: #3E2723;
+                           -fx-text-fill: white;
+                           -fx-font-size: 15px;"/>
+
+            <Button text="Customers"
+                    prefWidth="180"
+                    style="-fx-background-color: #3E2723;
+                           -fx-text-fill: white;
+                           -fx-font-size: 15px;"/>
+
+            <Button text="Logout"
+                    prefWidth="180"
+                    style="-fx-background-color: #8B0000;
+                           -fx-text-fill: white;
+                           -fx-font-size: 15px;"/>
+
+        </VBox>
+
+    </left>
+
+    <!-- CENTER CONTENT -->
+
+    <center>
+
+        <VBox spacing="20"
+              style="-fx-background-color: #F5F5F5;
+                     -fx-padding: 30;">
+
+            <Label text="Cafe Dashboard"
+                   style="-fx-font-size: 30px;
+                          -fx-font-weight: bold;
+                          -fx-text-fill: #3E2723;"/>
+
+            <!-- FORM -->
+
+            <GridPane hgap="15"
+                      vgap="15">
+
+                <TextField fx:id="idField"
+                           promptText="Product ID"
+                           GridPane.columnIndex="0"
+                           GridPane.rowIndex="0"/>
+
+                <TextField fx:id="nameField"
+                           promptText="Product Name"
+                           GridPane.columnIndex="1"
+                           GridPane.rowIndex="0"/>
+
+                <TextField fx:id="categoryField"
+                           promptText="Category"
+                           GridPane.columnIndex="0"
+                           GridPane.rowIndex="1"/>
+
+                <TextField fx:id="priceField"
+                           promptText="Price"
+                           GridPane.columnIndex="1"
+                           GridPane.rowIndex="1"/>
+
+                <TextField fx:id="quantityField"
+                           promptText="Quantity"
+                           GridPane.columnIndex="0"
+                           GridPane.rowIndex="2"/>
+
+            </GridPane>
+
+            <!-- BUTTONS -->
+
+            <HBox spacing="15">
+
+                <Button text="ADD"
+                        onAction="#addProduct"
+                        style="-fx-background-color: #4CAF50;
+                               -fx-text-fill: white;
+                               -fx-font-size: 14px;"/>
+
+                <Button text="UPDATE"
+                        onAction="#updateProduct"
+                        style="-fx-background-color: #2196F3;
+                               -fx-text-fill: white;
+                               -fx-font-size: 14px;"/>
+
+                <Button text="DELETE"
+                        onAction="#deleteProduct"
+                        style="-fx-background-color: #F44336;
+                               -fx-text-fill: white;
+                               -fx-font-size: 14px;"/>
+
+                <Button text="CLEAR"
+                        onAction="#clearFields"
+                        style="-fx-background-color: #757575;
+                               -fx-text-fill: white;
+                               -fx-font-size: 14px;"/>
+
+            </HBox>
+
+            <!-- TABLE -->
+
+            <TableView fx:id="tableView"
+                       prefHeight="400">
+
+                <columns>
+
+                    <TableColumn fx:id="colId"
+                                 text="ID"
+                                 prefWidth="80"/>
+
+                    <TableColumn fx:id="colName"
+                                 text="Product Name"
+                                 prefWidth="200"/>
+
+                    <TableColumn fx:id="colCategory"
+                                 text="Category"
+                                 prefWidth="150"/>
+
+                    <TableColumn fx:id="colPrice"
+                                 text="Price"
+                                 prefWidth="120"/>
+
+                    <TableColumn fx:id="colQuantity"
+                                 text="Quantity"
+                                 prefWidth="120"/>
+
+                </columns>
+
+            </TableView>
+
+        </VBox>
+
+    </center>
+
+</BorderPane>
