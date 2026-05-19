@@ -1,12 +1,9 @@
-
-
 public class MenuItem {
-    private int id;
-    private String name;
-    private String category; // e.g., Coffee, Tea, Dessert, Snack
-    private double price;
+    int id;
+    String name;
+    String category;
+    double price;
 
-    // Constructor
     public MenuItem(int id, String name, String category, double price) {
         this.id = id;
         this.name = name;
@@ -14,42 +11,11 @@ public class MenuItem {
         this.price = price;
     }
 
-    // Getters and Setters
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getCategory() {
-        return category;
-    }
-
-    public void setCategory(String category) {
-        this.category = category;
-    }
-
-    public double getPrice() {
-        return price;
-    }
-
-    public void setPrice(double price) {
-        this.price = price;
-    }
-
-    // Display format for a single item
-    @Override
-    public String toString() {
-        return String.format("ID: %-4d | Name: %-18s | Category: %-10s | Price: ₹%.2f", id, name, category, price);
+    public void display() {
+        System.out.println("---------------------------");
+        System.out.println("Item ID   : " + id);
+        System.out.println("Name      : " + name);
+        System.out.println("Category  : " + category);
+        System.out.println("Price     : ₹" + price);
     }
 }
