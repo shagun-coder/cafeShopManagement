@@ -3,53 +3,54 @@ package controller;
 import database.DBConnection;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
-import javafx.fxml.FXML;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
-import java.io.File;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
 public class LoginController {
 
-    @FXML
-    private TextField usernameField;
+    public TextField usernameField;
+    public PasswordField passwordField;
 
-    @FXML
-    private PasswordField passwordField;
+    Connection connect;
+    PreparedStatement prepare;
+    ResultSet result;
 
+    // LOGIN
     public void login(ActionEvent event) {
 
         try {
 
-            Connection connect = DBConnection.connect();
+            connect = DBConnection.connect();
 
             String sql = "SELECT * FROM users WHERE username=? AND password=?";
 
-            PreparedStatement prepare = connect.prepareStatement(sql);
+            prepare = connect.prepareStatement(sql);
 
             prepare.setString(1, usernameField.getText());
             prepare.setString(2, passwordField.getText());
 
-            ResultSet result = prepare.executeQuery();
+            result = prepare.executeQuery();
 
-            if (result.next()) {
+            boolean check = result.next();
 
-                File file = new File("src/view/dashboard.fxml");
+            System.out.println(check);
 
-                Parent root = FXMLLoader.load(file.toURI().toURL());
+            if (check) {
+
+                Parent root = FXMLLoader.load(
+                        getClass().getResource("/view/dashboard.fxml"));
 
                 Stage stage = new Stage();
 
                 stage.setScene(new Scene(root));
                 stage.show();
-
-                usernameField.getScene().getWindow().hide();
 
             } else {
 
@@ -62,20 +63,18 @@ public class LoginController {
         }
     }
 
+    // OPEN SIGNUP PAGE
     public void openSignup(ActionEvent event) {
 
         try {
 
-            File file = new File("src/view/signup.fxml");
-
-            Parent root = FXMLLoader.load(file.toURI().toURL());
+            Parent root = FXMLLoader.load(
+                    getClass().getResource("/view/signup.fxml"));
 
             Stage stage = new Stage();
 
             stage.setScene(new Scene(root));
             stage.show();
-
-            usernameField.getScene().getWindow().hide();
 
         } catch (Exception e) {
 
