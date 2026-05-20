@@ -1,24 +1,20 @@
 package model;
 
 public class Product {
-
     private int id;
     private String name;
     private String category;
     private double price;
     private int quantity;
+    private String status;
 
-    public Product(int id,
-            String name,
-            String category,
-            double price,
-            int quantity) {
-
+    public Product(int id, String name, String category, double price, int quantity, String status) {
         this.id = id;
         this.name = name;
         this.category = category;
         this.price = price;
         this.quantity = quantity;
+        this.status = status;
     }
 
     public int getId() {
@@ -39,5 +35,9 @@ public class Product {
 
     public int getQuantity() {
         return quantity;
+    }
+
+    public String getStatus() {
+        return status;
     }
 }

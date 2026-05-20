@@ -1,0 +1,183 @@
+/* Core Layout Settings */
+.root {
+    -fx-font-family: "Segoe UI", sans-serif;
+    -fx-background-color: #3D251D;
+    /* Dark brown window border */
+}
+
+/* 1. Left Sidebar Styling */
+.sidebar {
+    -fx-background-color: #2B1810;
+    /* Extra dark coffee color */
+    -fx-padding: 10px;
+}
+
+/* Sidebar Buttons */
+.menu-btn {
+    -fx-background-color: transparent;
+    -fx-text-fill: #E6CCB2;
+    -fx-alignment: CENTER_LEFT;
+    -fx-font-size: 15px;
+    -fx-padding: 12px 20px;
+    -fx-background-radius: 8px;
+    -fx-cursor: hand;
+}
+
+.menu-btn:hover {
+    -fx-background-color: #4A3225;
+    -fx-text-fill: #FFFFFF;
+}
+
+/* Selected Products Tab Button */
+.menu-btn-active {
+    -fx-background-color: #B08968;
+    /* Warm light clay brown */
+    -fx-text-fill: #FFFFFF;
+    -fx-alignment: CENTER_LEFT;
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+    -fx-padding: 12px 20px;
+    -fx-background-radius: 8px;
+}
+
+.btn-logout {
+    -fx-background-color: transparent;
+    -fx-text-fill: #E6CCB2;
+    -fx-alignment: CENTER_LEFT;
+    -fx-font-size: 15px;
+    -fx-padding: 12px 20px;
+    -fx-cursor: hand;
+}
+
+.btn-logout:hover {
+    -fx-text-fill: #FF6B6B;
+}
+
+/* 2. Main Work Area Panels */
+.main-content-area {
+    -fx-background-color: #EDE0D4;
+    /* Soft cream/latte background color */
+    -fx-background-radius: 20px 0px 0px 0px;
+    /* Smooth rounded upper-left panel corner */
+}
+
+.form-card {
+    -fx-background-color: #FFFFFF;
+    -fx-background-radius: 12px;
+    -fx-padding: 20px;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.08), 8, 0, 0, 4);
+}
+
+.section-title {
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #3D251D;
+}
+
+/* 3. Input Fields & Dropdowns */
+.text-field,
+.combo-box {
+    -fx-background-color: #FFFFFF;
+    -fx-border-color: #D3CBD2;
+    -fx-border-radius: 6px;
+    -fx-background-radius: 6px;
+    -fx-padding: 8px;
+    -fx-font-size: 14px;
+}
+
+.text-field:focused,
+.combo-box:focused {
+    -fx-border-color: #B08968;
+    -fx-border-width: 1.5px;
+}
+
+/* 4. The Action Buttons */
+.btn-add {
+    -fx-background-color: #2A7B4C;
+    /* Forest Green */
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+    -fx-background-radius: 8px;
+    -fx-cursor: hand;
+}
+
+.btn-add:hover {
+    -fx-background-color: #1E5936;
+}
+
+.btn-update {
+    -fx-background-color: #3B71CA;
+    /* Slate Blue */
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+    -fx-background-radius: 8px;
+    -fx-cursor: hand;
+}
+
+.btn-update:hover {
+    -fx-background-color: #28509E;
+}
+
+.btn-delete {
+    -fx-background-color: #DC4C64;
+    /* Crimson Red */
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+    -fx-background-radius: 8px;
+    -fx-cursor: hand;
+}
+
+.btn-delete:hover {
+    -fx-background-color: #B23246;
+}
+
+.btn-clear {
+    -fx-background-color: #543D2B;
+    /* Dark Cocoa Muted Brown */
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+    -fx-background-radius: 8px;
+    -fx-cursor: hand;
+}
+
+.btn-clear:hover {
+    -fx-background-color: #3D2B1E;
+}
+
+/* 5. Clean Custom TableView Styles */
+.table-view {
+    -fx-background-color: #FFFFFF;
+    -fx-background-radius: 10px;
+    -fx-border-radius: 10px;
+    -fx-border-color: #E6CCB2;
+}
+
+.table-view .column-header-background {
+    -fx-background-color: #3D251D;
+    /* Table header matching deep brown */
+}
+
+.table-view .column-header,
+.table-view .filler {
+    -fx-background-color: transparent;
+    -fx-size: 40px;
+}
+
+.table-view .column-header .label {
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-font-size: 13px;
+}
+
+.table-view .table-row-cell {
+    -fx-cell-size: 35px;
+}
+
+.table-view .table-row-cell:selected {
+    -fx-background-color: #E6CCB2;
+    -fx-text-fill: #3D251D;
+}

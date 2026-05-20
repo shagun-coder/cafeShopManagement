@@ -12,10 +12,6 @@ public class MenuItem {
     }
 
     public void display() {
-        System.out.println("---------------------------");
-        System.out.println("Item ID   : " + id);
-        System.out.println("Name      : " + name);
-        System.out.println("Category  : " + category);
-        System.out.println("Price     : ₹" + price);
+        System.out.println(id + " | " + name + " | " + category + " | ₹" + price);
     }
 }

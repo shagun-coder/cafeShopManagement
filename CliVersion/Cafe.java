@@ -6,16 +6,17 @@ public class Cafe {
     ArrayList<MenuItem> menu = new ArrayList<>();
     Scanner sc = new Scanner(System.in);
 
-    // LOAD DATA FROM FILE
+    // LOAD FROM FILE
     public void loadFromFile() {
         try {
             File file = new File("menu.txt");
+
             if (!file.exists()) return;
 
-            Scanner fileScanner = new Scanner(file);
+            Scanner fs = new Scanner(file);
 
-            while (fileScanner.hasNextLine()) {
-                String line = fileScanner.nextLine();
+            while (fs.hasNextLine()) {
+                String line = fs.nextLine();
                 String[] data = line.split(",");
 
                 int id = Integer.parseInt(data[0]);
@@ -26,107 +27,107 @@ public class Cafe {
                 menu.add(new MenuItem(id, name, category, price));
             }
 
-            fileScanner.close();
+            fs.close();
         } catch (Exception e) {
-            System.out.println("Error loading file!");
+            System.out.println("Error loading file");
         }
     }
 
-    // SAVE DATA TO FILE
+    // SAVE TO FILE
     public void saveToFile() {
         try {
-            FileWriter writer = new FileWriter("menu.txt");
+            FileWriter fw = new FileWriter("menu.txt");
 
-            for (MenuItem item : menu) {
-                writer.write(item.id + "," +
-                             item.name + "," +
-                             item.category + "," +
-                             item.price + "\n");
+            for (MenuItem m : menu) {
+                fw.write(m.id + "," + m.name + "," + m.category + "," + m.price + "\n");
             }
 
-            writer.close();
+            fw.close();
         } catch (Exception e) {
-            System.out.println("Error saving file!");
+            System.out.println("Error saving file");
         }
     }
 
-    // ADD ITEM
+    // ADD
     public void addItem() {
-        System.out.print("Enter Item ID: ");
+        System.out.print("ID: ");
         int id = sc.nextInt();
         sc.nextLine();
 
-        System.out.print("Enter Item Name: ");
+        System.out.print("Name: ");
         String name = sc.nextLine();
 
-        System.out.print("Enter Category: ");
+        System.out.print("Category: ");
         String category = sc.nextLine();
 
-        System.out.print("Enter Price: ");
+        System.out.print("Price: ");
         double price = sc.nextDouble();
-        sc.nextLine();
 
         menu.add(new MenuItem(id, name, category, price));
         saveToFile();
 
-        System.out.println("Item Added Successfully!");
+        System.out.println("✔ Item Added");
     }
 
-    // VIEW ITEMS
+    // VIEW
     public void viewItems() {
         if (menu.isEmpty()) {
-            System.out.println("No Menu Items Found.");
+            System.out.println("❌ No Items Found");
             return;
         }
 
-        for (MenuItem item : menu) {
-            item.display();
+        for (MenuItem m : menu) {
+            m.display();
         }
     }
 
-    // UPDATE ITEM
+    // UPDATE
     public void updateItem() {
-        System.out.print("Enter Item ID to Update: ");
+        System.out.print("Enter ID: ");
         int id = sc.nextInt();
         sc.nextLine();
 
-        for (MenuItem item : menu) {
-            if (item.id == id) {
+        for (MenuItem m : menu) {
+            if (m.id == id) {
 
-                System.out.print("Enter New Name: ");
-                item.name = sc.nextLine();
+                System.out.print("New Name: ");
+                m.name = sc.nextLine();
 
-                System.out.print("Enter New Category: ");
-                item.category = sc.nextLine();
+                System.out.print("New Category: ");
+                m.category = sc.nextLine();
 
-                System.out.print("Enter New Price: ");
-                item.price = sc.nextDouble();
-                sc.nextLine();
+                System.out.print("New Price: ");
+                m.price = sc.nextDouble();
 
                 saveToFile();
-                System.out.println("Item Updated Successfully!");
+
+                System.out.println("✔ Updated");
                 return;
             }
         }
 
-        System.out.println("Item Not Found.");
+        System.out.println("❌ Not Found");
     }
 
-    // DELETE ITEM
+    // DELETE
     public void deleteItem() {
-        System.out.print("Enter Item ID to Delete: ");
+        System.out.print("Enter ID: ");
         int id = sc.nextInt();
 
-        for (MenuItem item : menu) {
-            if (item.id == id) {
-                menu.remove(item);
+        for (int i = 0; i < menu.size(); i++) {
+            if (menu.get(i).id == id) {
+                menu.remove(i);
                 saveToFile();
 
-                System.out.println("Item Deleted Successfully!");
+                System.out.println("✔ Deleted");
                 return;
             }
         }
 
-        System.out.println("Item Not Found.");
+        System.out.println("❌ Not Found");
+    }
+
+    public void closeScanner() {
+        sc.close();
     }
 }

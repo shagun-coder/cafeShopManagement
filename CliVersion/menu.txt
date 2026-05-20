@@ -1,1 +1,1 @@
-101,coffee,beverages,199.0
+1,tea,Beverages,20.0
